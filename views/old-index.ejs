@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Mini Craft</title>
+  </head>
+
+  <body>
+    <div class="bg-black">
+      <div class="lg:block hidden">
+        <nav class="container mx-auto px-4 flex justify-center lg:gap-14 gap-4">
+          <div class=""><img src="./img/hd3.png" alt="Image" class="" /></div>
+          <div class="flex lg:gap-11 gap-4 items-center">
+            <a
+              href="/"
+              class="cursor-pointer 2xl:text-[35px] text-base text-white"
+              >Home</a
+            >
+            <svg
+              width="3"
+              height="62"
+              viewBox="0 0 3 62"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M1.5 0V62" stroke="white" stroke-width="2" />
+            </svg>
+            <a
+              href="frame3.html"
+              class="cursor-pointer 2xl:text-[35px] text-base text-white 2xl:whitespace-nowrap"
+              >Servers & Pricing</a
+            >
+            <svg
+              width="3"
+              height="62"
+              viewBox="0 0 3 62"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M1.5 0V62" stroke="white" stroke-width="2" />
+            </svg>
+            <a href="frame4.html" class="2xl:text-[35px] text-base text-white"
+              >Support</a
+            >
+            <svg
+              width="3"
+              height="62"
+              viewBox="0 0 3 62"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M1.5 0V62" stroke="white" stroke-width="2" />
+            </svg>
+            <a
+              href="frame2.html"
+              class="2xl:text-[35px] text-base text-white 2xl:whitespace-nowrap"
+              >More Info</a
+            >
+          </div>
+        </nav>
+      </div>
+      <div class="lg:hidden block">
+        <!-- Navbar -->
+        <div class="relative lg:hidden 2xl:mx-auto 2xl:container w-full p-2">
+          <div class="flex justify-between items-center pt1-8">
+            <div class="w-28">
+              <img src="./img/logo.png" alt="Logo" />
+            </div>
+            <div class="flex gap-4 items-center">
+              <div>
+                <button
+                  id="menu"
+                  aria-label="open menu"
+                  onclick="sidebarHandler(true)"
+                  class="text-gray-800"
+                >
+                  <svg
+                    width="45"
+                    height="33"
+                    viewBox="0 0 45 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="45" height="5" rx="2.5" fill="white" />
+                    <rect y="14" width="45" height="5" rx="2.5" fill="white" />
+                    <rect y="28" width="45" height="5" rx="2.5" fill="white" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <!--Mobile responsive sidebar-->
+        <div
+          class="bg-gray-50 fixed left-0 top-0 w-full h-full transform -translate-x-full z-40 transition duration-700 lg:hidden"
+          id="mobile-nav"
+        >
+          <div
+            class="opacity-50 w-full h-full"
+            onclick="sidebarHandler(false)"
+          ></div>
+          <div
+            class="w-full h-full shadow-lg fixed overflow-y-auto z-40 top-0 flex-col justify-between xl:hidden pb-4 transition duration-500 ease-in-out"
+          >
+            <div class="px-6 h-full">
+              <div class="pt-4 flex flex-col justify-between h-full w-full">
+                <div>
+                  <div
+                    class="pb-4 border-b border-gray-200 flex justify-between items-center"
+                  >
+                    <div class="">
+                      <img src="./img/logo.png" alt="Logo" />
+                    </div>
+                    <div class="flex w-full items-end justify-end">
+                      <div class="flex items-center justify-end w-full">
+                        <button
+                          id="cross"
+                          aria-label="close menu"
+                          class="focus:outline-none focus:ring-2 rounded-md text-gray-800"
+                          onclick="sidebarHandler(false)"
+                        >
+                          <img
+                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/hero_5_Svg3.svg"
+                            alt="cross"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="flex flex-col items-start mt-4 gap-12">
+                    <a href="/">
+                      <li class="text-sm font-bold nav">Home</li>
+                    </a>
+                    <a href="frame3.html">
+                      <li class="text-sm font-bold nav">Servers & Pricing</li>
+                    </a>
+                    <a href="frame4.html">
+                      <li class="text-sm font-bold nav">Support</li>
+                    </a>
+                    <a href="frame2.html">
+                      <li class="text-sm font-bold nav">More Info</li>
+                    </a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end -->
+        <!--  -->
+      </div>
+    </div>
+    <div class="bg-[#37424E]">
+      <div class="container mx-auto px-4 py-2">
+        <div>
+          <img
+            src="./img/mini.webp"
+            alt="Image"
+            class="mx-auto lg:max-w-[1625px] w-full"
+          />
+        </div>
+        <div>
+          <img
+            src="./img/hd2.png"
+            alt="Image"
+            class="mx-auto lg:max-w-[998px] w-full"
+          />
+        </div>
+        <div>
+          <img src="./img/9yby5.png" alt="Image" class="mx-auto xl:-mt-" />
+        </div>
+        <!-- <div><img src="./img/email12e3e.png" alt="Image" class="mx-auto"></div> -->
+        <p class="text-[#FFF] text-[64px] font-normal text-center rage">
+          Buisness Email: <span class="pl-1"> ezraenterprise1@outlook.com</span>
+        </p>
+      </div>
+    </div>
+    <div class="bg-[#A87627]">
+      <div class="container mx-auto px-4 py-10">
+        <p
+          class="2xl:max-w-[1740px] mx-auto w-full text-center text-black text-[85px] font-normal"
+        >
+          We're Not Corporate, <br />We Got the Service, <br />We Sell Pristine
+          Like You Want it, <br />We got the Goods,<br />
+          People like it so Buy It.<br />We not BootLeg, We're Top Notch
+          <br />We May be New to the Game but We 're Pristine,<br />so You
+          Better Get it Today,<br />BUY IT !
+        </p>
+      </div>
+    </div>
+    <div class="bg-black">
+      <div
+        class="container mx-auto px-4 py-10 flex items-center gap-2 justify-center md:flex-nowrap flex-wrap"
+      >
+        <p class="text-white text-[22px] font-normal text-center rage">
+          Copyright 2023 © Pristineserverhosting Company - All Rights Reserved
+          Located in Baton Rogue
+        </p>
+        <svg
+          width="7"
+          height="7"
+          viewBox="0 0 7 7"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.5 7C5.433 7 7 5.433 7 3.5C7 1.567 5.433 0 3.5 0C1.567 0 0 1.567 0 3.5C0 5.433 1.567 7 3.5 7Z"
+            fill="white"
+          />
+        </svg>
+        <p class="text-white text-[22px] font-normal text-center rage">
+          Located in Baton Rogue
+        </p>
+      </div>
+    </div>
+    <script>
+      // Nav
+      let sideBar = document.getElementById("mobile-nav");
+      let menu = document.getElementById("menu");
+      let cross = document.getElementById("cross");
+      const sidebarHandler = (check) => {
+        if (check) {
+          sideBar.style.transform = "translateX(0px)";
+          menu.classList.add("hidden");
+          cross.classList.remove("hidden");
+        } else {
+          sideBar.style.transform = "translateX(-100%)";
+          menu.classList.remove("hidden");
+          cross.classList.add("hidden");
+        }
+      };
+    </script>
+   
+  </body>
+</html>

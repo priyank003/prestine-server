@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Abrial Fat Face Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Abrial Fat Face Font Ends Here -->
+    <title>Mini Craft</title>
+  </head>
+
+  <body>
+    <div class="lg:max-w-[1100px] w-full mx-auto">
+      <%- include("partials/navbar.ejs") %>
+      <!--  -->
+      <div class="bg-[#B17D0F] pb-[184px]">
+        <div class="container mx-auto xl:px-14 px-4 pt-14">
+          <div
+            class="bg-black 2xl:pl-[100px] 2xl:pr-[50px] mb-24 2xl:px-0 px-4 2xl:pt-12 2xl:pb-14 2xl:py-0 py-10 flex lg:justify-between items-center xl:flex-nowrap flex-wrap"
+          >
+            <div class="w-full">
+              <p class="text-white text-[67px] font-normal">
+                10% of Sales help the poor
+              </p>
+              <p class="text-white text-[46px] font-normal abril mt-7 mb-9">
+                Contact us
+              </p>
+              <p class="text-white text-[38px] font-normal rage">
+                Buisness Email:
+                <span
+                  class="text-white md:text-[39px] text-3xl font-normal pl-2"
+                >
+                  ezraenterprise1@outlook.com</span
+                >
+              </p>
+            </div>
+            <div><img src="./img/pngwing.com.png" alt="Heart" /></div>
+          </div>
+          <p class="text-white text-center pb-12 text-[50px] font-normal abril">
+            How Sale will work
+          </p>
+          <div class="bg-white px-4 text-center pb-14">
+            <p
+              class="xl:max-w-[1436px] w-full pt-32 pb-20 mx-auto text-center text-[#3D3D3D] md:text-[40px] text-2xl font-normal 2xl:leading-[65px] leading-normal times"
+            >
+              When you purchase the server slot and free subdomain you will
+              receive through email the ssh information and the server subdomain
+              name (****.pristineserverhosting.com). The subdomain is
+              customizable through request to ezraenterprise1@outlook.com for a
+              fee for $5. We have 9/5 CST Support We don't have hidden fees in
+              any of our plans. We aren't a sawdust joint and we care about our
+              customers. Just look at our rap sheet
+            </p>
+            <a href="pricing">
+              <button
+                class="md:w-[477px] w-full h-[56px] text-center bg-[#B17D0F] text-white times hover:bg-opacity-90"
+              >
+                Buy Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="bg-black">
+        <div
+          class="container mx-auto px-2 py-10 flex items-center gap-2 justify-center md:flex-nowrap flex-wrap"
+        >
+          <p class="text-white text-[22px] font-normal text-center rage">
+            Copyright 2023 © Pristineserverhosting Company - All Rights Reserved
+          </p>
+          <svg
+            width="7"
+            height="7"
+            viewBox="0 0 7 7"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.5 7C5.433 7 7 5.433 7 3.5C7 1.567 5.433 0 3.5 0C1.567 0 0 1.567 0 3.5C0 5.433 1.567 7 3.5 7Z"
+              fill="white"
+            />
+          </svg>
+          <p class="text-white text-[22px] font-normal text-center rage">
+            Located in Baton Rogue
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Nav
+      let sideBar = document.getElementById("mobile-nav");
+      let menu = document.getElementById("menu");
+      let cross = document.getElementById("cross");
+      const sidebarHandler = (check) => {
+        if (check) {
+          sideBar.style.transform = "translateX(0px)";
+          menu.classList.add("hidden");
+          cross.classList.remove("hidden");
+        } else {
+          sideBar.style.transform = "translateX(-100%)";
+          menu.classList.remove("hidden");
+          cross.classList.add("hidden");
+        }
+      };
+    </script>
+  </body>
+</html>

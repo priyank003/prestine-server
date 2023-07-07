@@ -1,0 +1,66 @@
+@font-face {
+  font-family: "algerian";
+  src: url("Algerian\ Regular/");
+}
+@font-face {
+  font-family: "rage";
+  src: url("./RAGE.TTF");
+}
+@font-face {
+  font-family: "times";
+  src: url("./Times\ New\ Roman/");
+}
+.times {
+  font-family: "times";
+}
+body {
+  font-family: "algerian";
+}
+
+.rage {
+  font-family: "rage";
+}
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1380px !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1920px !important;
+  }
+}
+.abril {
+  font-family: "Abril Fatface", cursive;
+}
+body {
+  background-color: white;
+}
+.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

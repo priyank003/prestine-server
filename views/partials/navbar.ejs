@@ -1,0 +1,159 @@
+<div class="bg-black">
+  <div class="lg:block hidden">
+    <nav
+      class="container flex bg-black"
+      style="display: flex; justify-content: space-between; height: 80px"
+    >
+      <div style="width: 40%">
+        <img
+          src="./img/logo.png"
+          alt="Image"
+          class="h-full"
+          style="object-fit: auto"
+        />
+      </div>
+      <div
+        style="
+          display: flex;
+          flex: 1;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 5%;
+        "
+      >
+        <a
+          href="/"
+          class="cursor-pointer 2xl:text-[20px] text-base text-white nav-link"
+          >Home</a
+        >
+        <span
+          class="text-white text-2xl"
+          style="border: 1px solid white; height: 50%"
+        ></span>
+
+        <a
+          href="pricing"
+          class="cursor-pointer 2xl:text-[20px] text-base text-white 2xl:whitespace-nowrap nav-link"
+          >Servers & Pricing</a
+        >
+        <span
+          class="text-white text-2xl"
+          style="border: 1px solid white; height: 50%"
+        ></span>
+        <a href="support" class="2xl:text-[20px] text-base text-white nav-link"
+          >Support</a
+        >
+        <span
+          class="text-white text-2xl"
+          style="border: 1px solid white; height: 50%"
+        ></span>
+        <a
+          href="more-info"
+          class="2xl:text-[20px] text-base text-white 2xl:whitespace-nowrap nav-link"
+          >More Info</a
+        >
+      </div>
+    </nav>
+  </div>
+  <div class="lg:hidden block">
+    <!-- Navbar -->
+    <div class="relative lg:hidden 2xl:mx-auto 2xl:container w-full p-2">
+      <div class="flex justify-between items-center pt1-8">
+        <div class="w-28">
+          <img src="./img/logo.png" alt="Logo" />
+        </div>
+        <div
+          class="lg:gap-11 gap-4"
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 10px;
+          "
+        >
+          <a
+            href="/"
+            class="cursor-pointer 2xl:text-[20px] text-base text-white"
+            >Home</a
+          >
+          <span class="text-white text-2xl">|</span>
+
+          <a
+            href="frame3.html"
+            class="cursor-pointer 2xl:text-[20px] text-base text-white 2xl:whitespace-nowrap"
+            >Servers & Pricing</a
+          >
+          <span class="text-white text-2xl">|</span>
+          <a href="frame4.html" class="2xl:text-[20px] text-base text-white"
+            >Support</a
+          >
+          <span class="text-white text-2xl">|</span>
+          <a
+            href="frame2.html"
+            class="2xl:text-[20px] text-base text-white 2xl:whitespace-nowrap"
+            >More Info</a
+          >
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <!--Mobile responsive sidebar-->
+    <div
+      class="bg-gray-50 fixed left-0 top-0 w-full h-full transform -translate-x-full z-40 transition duration-700 lg:hidden"
+      id="mobile-nav"
+    >
+      <div
+        class="opacity-50 w-full h-full"
+        onclick="sidebarHandler(false)"
+      ></div>
+      <div
+        class="w-full h-full shadow-lg fixed overflow-y-auto z-40 top-0 flex-col justify-between xl:hidden pb-4 transition duration-500 ease-in-out"
+      >
+        <div class="px-6 h-full">
+          <div class="pt-4 flex flex-col justify-between h-full w-full">
+            <div>
+              <div
+                class="pb-4 border-b border-gray-200 flex justify-between items-center"
+              >
+                <div class="">
+                  <img src="./img/logo.png" alt="Logo" />
+                </div>
+                <div class="flex w-full items-end justify-end">
+                  <div class="flex items-center justify-end w-full">
+                    <button
+                      id="cross"
+                      aria-label="close menu"
+                      class="focus:outline-none focus:ring-2 rounded-md text-gray-800"
+                      onclick="sidebarHandler(false)"
+                    >
+                      <img
+                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/hero_5_Svg3.svg"
+                        alt="cross"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <ul class="flex flex-col items-start mt-4 gap-12">
+                <a href="/">
+                  <li class="text-sm font-bold nav">Home</li>
+                </a>
+                <a href="frame3.html">
+                  <li class="text-sm font-bold nav">Servers & Pricing</li>
+                </a>
+                <a href="frame4.html">
+                  <li class="text-sm font-bold nav">Support</li>
+                </a>
+                <a href="frame2.html">
+                  <li class="text-sm font-bold nav">More Info</li>
+                </a>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end -->
+    <!--  -->
+  </div>
+</div>

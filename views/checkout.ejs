@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Abrial Fat Face Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- Abrial Fat Face Font Ends Here -->
+    <title>Mini Craft</title>
+  </head>
+
+  <body>
+    <div class="lg:max-w-[1100px] w-full mx-auto">
+      <div class="bg-black">
+        <!-- <div class="lg:block hidden">
+          <nav
+            class="container mx-auto px-4 flex justify-center lg:gap-14 gap-4"
+          >
+            <div class="">
+              <img src="./img/hd3.png" alt="Image" class="pt-4" />
+            </div>
+            <div class="flex lg:gap-11 gap-4 items-center">
+              <a
+                href="/"
+                class="cursor-pointer 2xl:text-[20px] text-base text-white"
+                >Home</a
+              >
+              <svg
+                width="3"
+                height="62"
+                viewBox="0 0 3 62"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M1.5 0V62" stroke="white" stroke-width="2" />
+              </svg>
+              <a
+                href="frame3.html"
+                class="cursor-pointer 2xl:text-[20px] text-base text-white 2xl:whitespace-nowrap"
+                >Servers & Pricing</a
+              >
+              <svg
+                width="3"
+                height="62"
+                viewBox="0 0 3 62"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M1.5 0V62" stroke="white" stroke-width="2" />
+              </svg>
+              <a href="frame4.html" class="2xl:text-[20px] text-base text-white"
+                >Support</a
+              >
+              <svg
+                width="3"
+                height="62"
+                viewBox="0 0 3 62"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M1.5 0V62" stroke="white" stroke-width="2" />
+              </svg>
+              <a
+                href="frame2.html"
+                class="2xl:text-[20px] text-base text-white 2xl:whitespace-nowrap"
+                >More Info</a
+              >
+            </div>
+          </nav>
+        </div> -->
+        <!-- <div class="lg:hidden block"> -->
+          <!-- Navbar -->
+          <!-- <div class="relative lg:hidden 2xl:mx-auto 2xl:container w-full p-2">
+            <div class="flex justify-between items-center pt1-8">
+              <div class="w-28">
+                <img src="./img/logo.png" alt="Logo" />
+              </div>
+              <div class="flex gap-4 items-center">
+                <div>
+                  <button
+                    id="menu"
+                    aria-label="open menu"
+                    onclick="sidebarHandler(true)"
+                    class="text-gray-800"
+                  >
+                    <svg
+                      width="45"
+                      height="33"
+                      viewBox="0 0 45 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="45" height="5" rx="2.5" fill="white" />
+                      <rect
+                        y="14"
+                        width="45"
+                        height="5"
+                        rx="2.5"
+                        fill="white"
+                      />
+                      <rect
+                        y="28"
+                        width="45"
+                        height="5"
+                        rx="2.5"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!--  -->
+          <!--Mobile responsive sidebar-->
+          <!-- <div
+            class="bg-gray-50 fixed left-0 top-0 w-full h-full transform -translate-x-full z-40 transition duration-700 lg:hidden"
+            id="mobile-nav"
+          >
+            <div
+              class="opacity-50 w-full h-full"
+              onclick="sidebarHandler(false)"
+            ></div>
+            <div
+              class="w-full h-full shadow-lg fixed overflow-y-auto z-40 top-0 flex-col justify-between xl:hidden pb-4 transition duration-500 ease-in-out"
+            >
+              <div class="px-6 h-full">
+                <div class="pt-4 flex flex-col justify-between h-full w-full">
+                  <div>
+                    <div
+                      class="pb-4 border-b border-gray-200 flex justify-between items-center"
+                    >
+                      <div class="">
+                        <img src="./img/logo.png" alt="Logo" />
+                      </div>
+                      <div class="flex w-full items-end justify-end">
+                        <div class="flex items-center justify-end w-full">
+                          <button
+                            id="cross"
+                            aria-label="close menu"
+                            class="focus:outline-none focus:ring-2 rounded-md text-gray-800"
+                            onclick="sidebarHandler(false)"
+                          >
+                            <img
+                              src="https://tuk-cdn.s3.amazonaws.com/can-uploader/hero_5_Svg3.svg"
+                              alt="cross"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <ul class="flex flex-col items-start mt-4 gap-12">
+                      <a href="/">
+                        <li class="text-sm font-bold nav">Home</li>
+                      </a>
+                      <a href="frame3.html">
+                        <li class="text-sm font-bold nav">Servers & Pricing</li>
+                      </a>
+                      <a href="frame4.html">
+                        <li class="text-sm font-bold nav">Support</li>
+                      </a>
+                      <a href="frame2.html">
+                        <li class="text-sm font-bold nav">More Info</li>
+                      </a>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!-- end -->
+          <!--  -->
+        <!-- </div> -->
+      <!-- </div> -->
+      <!--  -->
+      <div class="bg-[#B17D0F]">
+        <div
+          class="container mx-auto xl:px-14 px-4 pt-12 pb-9 flex gap-8 2xl:flex-nowrap flex-wrap"
+        >
+          <div class="lg:max-w-[1157px] w-full">
+            <p class="text-white lg:text-[50px] text-4xl abril font-normal">
+              Checkout
+            </p>
+            <div class="lg:max-w-[1157px] w-full bg-[#353F4B] px-7 py-7 mt-8">
+              <p class="text-white text-[33px] abril font-normal inline" >
+              Subscribe for  
+              </p>    
+              <p class="text-white text-[33px] abril font-normal inline" id="plan__desc">
+                
+              </p>
+              <p class="text-white text-[33px] abril font-normal inline" >
+                $/ month
+              </p>
+              <form id="payment-form">
+ 
+                <p class="text-white text-[18px] font-bold mb-5 times mt-4">
+                  Email Address
+                </p>
+                <input
+                  type="email"
+                  class="outline-none text-white px-4 bg-transparent w-full h-12 border"
+                  name="email"
+                  id="email"
+                />
+                <p class="text-white text-[18px] font-bold mb-5 times mt-4">
+                    Credit or debit card
+                  </p>
+
+                  <div id="card-element" class="outline-none text-white px-4 bg-transparent w-full h-12 border" style="color: white;">
+                    <!-- A Stripe Elements instance will be mounted here -->
+                  </div>
+      
+                  <!-- Any error messages will be mounted here -->
+                  <div id="card-errors" role="alert"></div>
+      
+   
+                <button
+                  class="md:max-w-[229px] w-full h-[70px] text-center bg-[#B17D0F] text-white times hover:bg-opacity-90"
+                  type="submit"
+                >
+                  Buy Now
+                </button>
+              </form>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+      <!--  -->
+      <div class="bg-black">
+        <div
+          class="container mx-auto px-2 py-10 flex items-center gap-2 justify-center md:flex-nowrap flex-wrap"
+        >
+          <p class="text-white text-[22px] font-normal text-center rage">
+            Copyright 2023 © Pristineserverhosting Company - All Rights Reserved
+          </p>
+          <svg
+            width="7"
+            height="7"
+            viewBox="0 0 7 7"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.5 7C5.433 7 7 5.433 7 3.5C7 1.567 5.433 0 3.5 0C1.567 0 0 1.567 0 3.5C0 5.433 1.567 7 3.5 7Z"
+              fill="white"
+            />
+          </svg>
+          <p class="text-white text-[22px] font-normal text-center rage">
+            Located in Baton Rogue
+          </p>
+        </div>
+      </div>
+      <div
+      id="notification"
+      class="fixed bottom-0 right-0 mb-4 mr-4 p-4 bg-gray-800 text-white rounded-md shadow-lg"
+    >
+      <span id="notificationText"></span>
+    </div>
+    </div>
+    <script>
+      // Nav
+    //   let sideBar = document.getElementById("mobile-nav");
+    //   let menu = document.getElementById("menu");
+    //   let cross = document.getElementById("cross");
+    //   const sidebarHandler = (check) => {
+    //     if (check) {
+    //       sideBar.style.transform = "translateX(0px)";
+    //       menu.classList.add("hidden");
+    //       cross.classList.remove("hidden");
+    //     } else {
+    //       sideBar.style.transform = "translateX(-100%)";
+    //       menu.classList.remove("hidden");
+    //       cross.classList.add("hidden");
+    //     }
+    //   };
+    function showNotification(message,redirectUrl) {
+  const notification = document.getElementById('notification');
+  const notificationText = document.getElementById('notificationText');
+
+  notificationText.innerText = message;
+  notification.style.display = 'block';
+
+  setTimeout(() => {
+    notification.style.display = 'none';
+    window.location.href = redirectUrl
+  }, 3000); // Hide the notification after 3 seconds
+}
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    // Fetch the parameter and render it
+    window.addEventListener('DOMContentLoaded', function() {
+      var parameterValue = getUrlParameter('plan');
+      document.getElementById('plan__desc').textContent = parameterValue;
+    });
+
+
+    if (document.getElementById('card-element')) {
+    /* Replace 'pk_test_************************' with your publishable key */
+    var stripe = Stripe('pk_test_51NN6JIGREri87tsDR9SJzwshfTcwfSOUwehH79uE3kSDilosJmqsiAkQ94qwHtQ4FxrmT5U7L2yhhSpSrvppiYWW004gXGjfwB');
+    var elements = stripe.elements();
+
+    /* Custom styling can be passed to options when creating an Element */
+    var style = {
+      base: {
+        fontSize: '16px', '::placeholder': { color: "#aab7c4"},
+        fontFamily: '"Open Sans", "Helvetica", sans-serif',
+        fontSmoothing: 'antialiased',
+      },
+      invalid: {
+        color: '#fa755a',
+        iconColor: '#fa755a'
+      }
+    };
+
+    /* Create a Stripe Elements instance 
+      and mount to the div with the id 'card-element' */
+
+    var card = elements.create('card', {style: style});
+
+    card.mount('#card-element');
+
+    /* Handle validation errors */
+    card.addEventListener('change', event => {
+      var displayError = document.getElementById('card-errors');
+      
+      if (event.error) {
+        displayError.textContent = event.error.message;
+      } else {
+        displayError.textContent = ''; 
+      }
+    });
+
+
+
+    /* Create a token when the form is submitted */
+    var form = document.getElementById('payment-form');
+
+    form.addEventListener('submit',async function(event) {
+      event.preventDefault();
+
+      const email= document.getElementById("email").value;
+    
+      stripe.createToken(card).then(async function(result) {
+        if (result.error) {
+          var errorElement = document.getElementById('card-errors');
+          errorElement.textContent = result.error.message;
+        } else {
+          // stripeTokenHandler(result.token);
+          const data={
+            customerEmail:email,
+    stripeToken:result.token.id,
+    planId:getUrlParameter('id')
+  }
+
+  try {
+    const response = await fetch("/api/processPayment", {
+      method: "post",
+      body: JSON.stringify(data),
+      headers: {
+       'Content-Type': 'application/json'
+     },
+    });
+
+    if (response.ok) {
+      // Payment was successful
+      showNotification("Payment success","home");
+      
+    } else {
+      // Payment failed
+      showNotification("Payment Failed","pricing");
+    
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
+         
+        }
+      })
+  //     const formData = new FormData(event.target);
+
+      
+
+
+    });
+  }
+
+  function stripeTokenHandler(token) {
+    var form = document.getElementById('payment-form');
+    var hiddenInput = document.createElement('input');
+    hiddenInput.setAttribute('type', 'hidden');
+    hiddenInput.setAttribute('name', 'stripeToken');
+    hiddenInput.setAttribute('value', token.id);
+    form.appendChild(hiddenInput);
+  }
+
+    </script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+  
+  </body>
+</html>

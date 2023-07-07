@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Abrial Fat Face Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Abrial Fat Face Font Ends Here -->
+    <title>Mini Craft</title>
+  </head>
+
+  <body>
+    <div class="lg:max-w-[1100px] w-full mx-auto">
+      <%- include("partials/navbar.ejs") %>
+      <!--  -->
+      <div class="bg-[#B17D0F]">
+        <div class="container mx-auto xl:px-14 px-4 pt-14 pb-9">
+          <div class="relative h-[357px]">
+            <img
+              src="./img/bg-wool-dark 21.png"
+              alt="Background"
+              class="w-full h-[357px] absolute z-0"
+            />
+            <div class="relative z-20 pt-24">
+              <div
+                class="text-white xl:text-[79px] text-5xl font-normal text-center rage"
+              >
+                Each Minecraft Server has been tested
+                <br class="xl:block hidden" />
+                and is guaranteed to work
+              </div>
+            </div>
+          </div>
+          <div class="bg-black pt-10 pb-4 xl:pl-20 xl:pr-[140px] px-4 mt-12">
+            <p class="text-white lg:text-[52px] text-4xl font-normal abril">
+              Server Info
+            </p>
+            <div
+              class="mt-10 flex lg:justify-between gap-4 items-start xl:flex-nowrap flex-wrap"
+            >
+              <ul class="lg:pl-8 pl-4">
+                <li
+                  class="text-white lg:text-[40px] text-3xl font-bold list-disc times"
+                >
+                  Server SSH Access
+                </li>
+                <li
+                  class="text-white lg:text-[40px] text-3xl font-bold list-disc times my-2"
+                >
+                  9/5 CST Support
+                </li>
+                <li
+                  class="text-white lg:text-[40px] text-3xl font-bold list-disc times"
+                >
+                  Custom Subdomain request through Email
+                </li>
+                <li
+                  class="text-white lg:text-[40px] text-3xl font-bold list-disc times mt-2"
+                >
+                  Fortnight Backups
+                </li>
+              </ul>
+              <div class="xl:-mt-14">
+                <img src="./img/minecraft-slider.png" alt="Image" />
+              </div>
+            </div>
+          </div>
+          <p class="text-white lg:text-[50px] text-4xl font-normal my-8 abril">
+            Minecraft Server Hosting
+          </p>
+          <div
+            class="bg-[#353F4B] py-10 lg:px-[34px] px-4 flex justify-center lg:gap-[55px] gap-7 flex-wrap 2xl:max-w-[1810px] w-full"
+            id="plans-container"
+          ></div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="bg-black">
+        <div
+          class="container mx-auto px-2 py-10 flex items-center gap-2 justify-center md:flex-nowrap flex-wrap"
+        >
+          <p class="text-white text-[22px] font-normal text-center rage">
+            Copyright 2023 © Pristineserverhosting Company - All Rights Reserved
+          </p>
+          <svg
+            width="7"
+            height="7"
+            viewBox="0 0 7 7"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.5 7C5.433 7 7 5.433 7 3.5C7 1.567 5.433 0 3.5 0C1.567 0 0 1.567 0 3.5C0 5.433 1.567 7 3.5 7Z"
+              fill="white"
+            />
+          </svg>
+          <p class="text-white text-[22px] font-normal text-center rage">
+            Located in Baton Rogue
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Nav
+      const SERVER_URL = "http://localhost:8000/";
+      let sideBar = document.getElementById("mobile-nav");
+      let menu = document.getElementById("menu");
+      let cross = document.getElementById("cross");
+      const sidebarHandler = (check) => {
+        if (check) {
+          sideBar.style.transform = "translateX(0px)";
+          menu.classList.add("hidden");
+          cross.classList.remove("hidden");
+        } else {
+          sideBar.style.transform = "translateX(-100%)";
+          menu.classList.remove("hidden");
+          cross.classList.add("hidden");
+        }
+      };
+
+      // function submitHandler(event, product) {
+      //   event.preventDefault();
+      //   const res = fetch("http://localhost:8000/");
+
+      //   console.log("after submit", product);
+      // }
+      function addParameter(event, parameter, id) {
+    
+        event.preventDefault(); // Prevent the default navigation behavior
+
+        const url = event.currentTarget.href; // Get the URL from the anchor tag
+
+        // Check if the URL already has query parameters
+        if (url.includes("?")) {
+          event.target.href = `${url}&plan=${parameter}&id=${id}`; // Append the parameter
+        } else {
+          event.target.href = `${url}?plan=${parameter}&id=${id}`; // Add the parameter
+        }
+
+        window.location.href = event.target.href; // Navigate to the updated URL
+      }
+
+      fetch("/api/plans")
+        .then((res) => res.json())
+        .then((plans) => {
+          console.log(plans);
+          const container = document.getElementById("plans-container");
+
+          plans.map((plan) => {
+            const planInstance = `
+          <div class="md:w-[384px] w-full">
+              <p
+                class="text-white text-[28px] font-normal abril px-10 py-8 bg-[#B17D0F]"
+              >
+                $${plan.price} / month
+              </p>
+              <div class="px-10 pt-10 pb-8 bg-white">
+                <div class="flex gap-5 items-center">
+                  <svg
+                    width="31"
+                    height="29"
+                    viewBox="0 0 31 29"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M30.288 12.7971L24.881 2.67208C24.5564 2.06165 24.0716 1.55117 23.4787 1.19546C22.8859 0.839748 22.2074 0.652243 21.516 0.653079H9.48997C8.8 0.652933 8.12293 0.840107 7.531 1.19463C6.93907 1.54915 6.4545 2.05772 6.12897 2.66608L0.692974 12.7961C0.387756 13.3649 0.228027 14.0005 0.228027 14.6461C0.228027 15.2917 0.387756 15.9272 0.692974 16.4961L6.12897 26.6181C6.45446 27.2266 6.93919 27.7353 7.53136 28.0896C8.12352 28.444 8.80087 28.6308 9.49097 28.6301H21.513C22.2042 28.631 22.8827 28.4437 23.4756 28.0881C24.0684 27.7326 24.5532 27.2223 24.878 26.6121L30.285 16.4871C30.5886 15.9197 30.7475 15.2861 30.7475 14.6426C30.7475 13.999 30.5886 13.3655 30.285 12.7981L30.288 12.7971ZM15.374 18.9901C15.1392 19.225 14.8602 19.4112 14.5532 19.5378C14.2462 19.6645 13.9171 19.7291 13.585 19.7281C12.9101 19.7286 12.2626 19.4609 11.785 18.9841L8.24597 15.5531L10.016 13.7261L13.568 17.1681L20.955 9.91808L22.74 11.7301L15.373 18.9871L15.374 18.9901Z"
+                      fill="#D4AF37"
+                    />
+                  </svg>
+                  <p class="text-black text-[23px] font-bold times">${
+                    plan.ram
+                  } GB RAM</p>
+                </div>
+                <div class="flex gap-5 items-center my-9">
+                  <svg
+                    width="31"
+                    height="29"
+                    viewBox="0 0 31 29"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M30.288 12.7971L24.881 2.67208C24.5564 2.06165 24.0716 1.55117 23.4787 1.19546C22.8859 0.839748 22.2074 0.652243 21.516 0.653079H9.48997C8.8 0.652933 8.12293 0.840107 7.531 1.19463C6.93907 1.54915 6.4545 2.05772 6.12897 2.66608L0.692974 12.7961C0.387756 13.3649 0.228027 14.0005 0.228027 14.6461C0.228027 15.2917 0.387756 15.9272 0.692974 16.4961L6.12897 26.6181C6.45446 27.2266 6.93919 27.7353 7.53136 28.0896C8.12352 28.444 8.80087 28.6308 9.49097 28.6301H21.513C22.2042 28.631 22.8827 28.4437 23.4756 28.0881C24.0684 27.7326 24.5532 27.2223 24.878 26.6121L30.285 16.4871C30.5886 15.9197 30.7475 15.2861 30.7475 14.6426C30.7475 13.999 30.5886 13.3655 30.285 12.7981L30.288 12.7971ZM15.374 18.9901C15.1392 19.225 14.8602 19.4112 14.5532 19.5378C14.2462 19.6645 13.9171 19.7291 13.585 19.7281C12.9101 19.7286 12.2626 19.4609 11.785 18.9841L8.24597 15.5531L10.016 13.7261L13.568 17.1681L20.955 9.91808L22.74 11.7301L15.373 18.9871L15.374 18.9901Z"
+                      fill="#D4AF37"
+                    />
+                  </svg>
+                  <p class="text-black text-[23px] font-bold times">${
+                    plan.gpu
+                  } GPU</p>
+                </div>
+                <div class="flex gap-5 items-center">
+                  <svg
+                    width="31"
+                    height="29"
+                    viewBox="0 0 31 29"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M30.288 12.7971L24.881 2.67208C24.5564 2.06165 24.0716 1.55117 23.4787 1.19546C22.8859 0.839748 22.2074 0.652243 21.516 0.653079H9.48997C8.8 0.652933 8.12293 0.840107 7.531 1.19463C6.93907 1.54915 6.4545 2.05772 6.12897 2.66608L0.692974 12.7961C0.387756 13.3649 0.228027 14.0005 0.228027 14.6461C0.228027 15.2917 0.387756 15.9272 0.692974 16.4961L6.12897 26.6181C6.45446 27.2266 6.93919 27.7353 7.53136 28.0896C8.12352 28.444 8.80087 28.6308 9.49097 28.6301H21.513C22.2042 28.631 22.8827 28.4437 23.4756 28.0881C24.0684 27.7326 24.5532 27.2223 24.878 26.6121L30.285 16.4871C30.5886 15.9197 30.7475 15.2861 30.7475 14.6426C30.7475 13.999 30.5886 13.3655 30.285 12.7981L30.288 12.7971ZM15.374 18.9901C15.1392 19.225 14.8602 19.4112 14.5532 19.5378C14.2462 19.6645 13.9171 19.7291 13.585 19.7281C12.9101 19.7286 12.2626 19.4609 11.785 18.9841L8.24597 15.5531L10.016 13.7261L13.568 17.1681L20.955 9.91808L22.74 11.7301L15.373 18.9871L15.374 18.9901Z"
+                      fill="#D4AF37"
+                    />
+                  </svg>
+                  <p class="text-black text-[23px] font-bold times">
+                    ${plan.fileSize} GB File Size
+                  </p>
+                </div>
+                <div class="flex gap-5 items-center my-9">
+                  <svg
+                    width="31"
+                    height="29"
+                    viewBox="0 0 31 29"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M30.288 12.7971L24.881 2.67208C24.5564 2.06165 24.0716 1.55117 23.4787 1.19546C22.8859 0.839748 22.2074 0.652243 21.516 0.653079H9.48997C8.8 0.652933 8.12293 0.840107 7.531 1.19463C6.93907 1.54915 6.4545 2.05772 6.12897 2.66608L0.692974 12.7961C0.387756 13.3649 0.228027 14.0005 0.228027 14.6461C0.228027 15.2917 0.387756 15.9272 0.692974 16.4961L6.12897 26.6181C6.45446 27.2266 6.93919 27.7353 7.53136 28.0896C8.12352 28.444 8.80087 28.6308 9.49097 28.6301H21.513C22.2042 28.631 22.8827 28.4437 23.4756 28.0881C24.0684 27.7326 24.5532 27.2223 24.878 26.6121L30.285 16.4871C30.5886 15.9197 30.7475 15.2861 30.7475 14.6426C30.7475 13.999 30.5886 13.3655 30.285 12.7981L30.288 12.7971ZM15.374 18.9901C15.1392 19.225 14.8602 19.4112 14.5532 19.5378C14.2462 19.6645 13.9171 19.7291 13.585 19.7281C12.9101 19.7286 12.2626 19.4609 11.785 18.9841L8.24597 15.5531L10.016 13.7261L13.568 17.1681L20.955 9.91808L22.74 11.7301L15.373 18.9871L15.374 18.9901Z"
+                      fill="#D4AF37"
+                    />
+                  </svg>
+                  <p class="text-black text-[23px] font-bold times">
+                    ${plan.backup} Backups
+                  </p>
+                </div>
+                <a href="checkout" onclick="addParameter(event,${
+                  plan.price
+                },'${plan.planId}')">
+                <button
+                  class="md:max-w-[335px] mx-auto w-full h-[61px] text-center bg-[#B17D0F] text-white times hover:bg-opacity-90"
+                >
+                  Get your Server
+                </button>
+              </a>
+              </div>
+            </div>
+          
+          
+          `;
+
+            container.innerHTML += planInstance;
+          });
+        });
+    </script>
+  </body>
+</html>

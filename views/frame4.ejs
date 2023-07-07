@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Abrial Fat Face Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Abrial Fat Face Font Ends Here -->
+    <title>Mini Craft</title>
+  </head>
+
+  <body>
+    <div class="lg:max-w-[1100px] w-full mx-auto">
+      <%- include("partials/navbar.ejs") %>
+      <!--  -->
+      <div class="bg-[#B17D0F]">
+        <div
+          class="container mx-auto xl:px-14 px-4 pt-12 pb-9 flex gap-8 2xl:flex-nowrap flex-wrap"
+        >
+          <div class="lg:max-w-[1157px] w-full">
+            <p class="text-white lg:text-[50px] text-4xl abril font-normal">
+              Contact us
+            </p>
+            <div class="lg:max-w-[1157px] w-full bg-[#353F4B] px-7 py-7 mt-8">
+              <p class="text-white text-[33px] abril font-normal">
+                Get in Touch with us
+              </p>
+              <form action="https://api.web3forms.com/submit" method="POST">
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="ccf02980-9a28-40ab-8bd4-7ed0a6a60a95"
+                />
+                <p class="text-white text-[18px] font-bold mt-8 mb-5 times">
+                  Full Name
+                </p>
+                <input
+                  type="text"
+                  class="outline-none text-white px-4 bg-transparent w-full h-12 border"
+                  name="name"
+                />
+                <p class="text-white text-[18px] font-bold mb-5 times mt-4">
+                  Email Address
+                </p>
+                <input
+                  type="email"
+                  class="outline-none text-white px-4 bg-transparent w-full h-12 border"
+                  name="email"
+                />
+                <p class="text-white text-[18px] font-bold mb-5 times mt-4">
+                  Phone Number
+                </p>
+                <input
+                  type="number"
+                  class="outline-none text-white px-4 bg-transparent w-full h-12 border"
+                  name="phone"
+                />
+                <p class="text-white text-[18px] font-bold mb-5 times mt-4">
+                  Your Message
+                </p>
+                <textarea
+                  class="outline-none text-white px-4 bg-transparent w-full h-[215px] border mb-8"
+                  name="message"
+                ></textarea>
+                <button
+                  class="md:max-w-[229px] w-full h-[70px] text-center bg-[#B17D0F] text-white times hover:bg-opacity-90"
+                  type="submit"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+          <div>
+            <p class="text-white lg:text-[50px] text-4xl abril font-normal">
+              Support
+            </p>
+            <div
+              class="bg-[#353F4B] px-8 pt-10 pb-14 rounded-lg lg:max-w-[578px] w-full mt-8"
+            >
+              <div class="text-white text-[18px] font-normal times">
+                Feel free to reach out to us with any questions or concern. We
+                make sure all our customers are taken care of and have the best
+                experience.
+              </div>
+              <div class="mt-10 flex items-center gap-7">
+                <div
+                  class="rounded-full w-[52px] h-[52px] bg-[#D4AF37] flex justify-center items-center"
+                >
+                  <svg
+                    width="24"
+                    height="18"
+                    viewBox="0 0 24 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M21.14 0H2.037C1.49708 0.00105712 0.979574 0.216007 0.597791 0.59779C0.216008 0.979572 0.00105712 1.49708 0 2.037L0 15.617C0.000793539 16.157 0.21566 16.6747 0.5975 17.0565C0.97934 17.4383 1.497 17.6532 2.037 17.654H21.137C21.677 17.6532 22.1947 17.4383 22.5765 17.0565C22.9583 16.6747 23.1732 16.157 23.174 15.617V2.037C23.1732 1.49751 22.9588 0.980311 22.5776 0.598557C22.1964 0.216802 21.6795 0.00158614 21.14 0ZM20.859 1.358L11.632 10.585L2.325 1.358H20.859ZM1.358 15.336V2.312L7.9 8.8L1.358 15.336ZM2.318 16.296L8.862 9.752L11.155 12.025C11.2822 12.1517 11.4545 12.2228 11.634 12.2228C11.8135 12.2228 11.9858 12.1517 12.113 12.025L14.349 9.789L20.859 16.3L2.318 16.296ZM21.818 15.336L15.31 8.827L21.819 2.318L21.818 15.336Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-white text-[17px] font-bold times">
+                    Email
+                  </div>
+                  <div class="text-white text-[24px] font-bold times mt-2">
+                    ezraenterprise1@outlook.com
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="bg-black">
+        <div
+          class="container mx-auto px-2 py-10 flex items-center gap-2 justify-center md:flex-nowrap flex-wrap"
+        >
+          <p class="text-white text-[22px] font-normal text-center rage">
+            Copyright 2023 © Pristineserverhosting Company - All Rights Reserved
+          </p>
+          <svg
+            width="7"
+            height="7"
+            viewBox="0 0 7 7"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.5 7C5.433 7 7 5.433 7 3.5C7 1.567 5.433 0 3.5 0C1.567 0 0 1.567 0 3.5C0 5.433 1.567 7 3.5 7Z"
+              fill="white"
+            />
+          </svg>
+          <p class="text-white text-[22px] font-normal text-center rage">
+            Located in Baton Rogue
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Nav
+      let sideBar = document.getElementById("mobile-nav");
+      let menu = document.getElementById("menu");
+      let cross = document.getElementById("cross");
+      const sidebarHandler = (check) => {
+        if (check) {
+          sideBar.style.transform = "translateX(0px)";
+          menu.classList.add("hidden");
+          cross.classList.remove("hidden");
+        } else {
+          sideBar.style.transform = "translateX(-100%)";
+          menu.classList.remove("hidden");
+          cross.classList.add("hidden");
+        }
+      };
+    </script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+  </body>
+</html>
